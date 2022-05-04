@@ -33,6 +33,7 @@ def main():
     game_grid = [0,0,0,0,0,0,0,0,0]
 
     # Gameplay directions
+    print("The goal of the game is to get three in a row. To play, simply type the number of the square you would like to place your marker.")
 
     # main game loop
         # remember to check for taken space
