@@ -49,32 +49,49 @@ def main():
             player_mark = 'X'
 
         #print(turn_num)
+        print()
         view_grid(game_grid)
 
         # Get user input
         square = int(input(f"{player_mark}'s turn to choose a square (1-9): "))
-        while square > 9 or square < 1 or game_grid[square] != 0:
+        while square > 9 or square < 1 or game_grid[square-1] != 0:
             square = int(input("Invalid square, pick again (1-9): "))
 
-        turn(game_grid, square, player_turn)
+        game_grid = turn(game_grid, square, player_turn)
 
         if check_win(game_grid) != 0:
             turn_num = 10
 
 
     # winner printout
+    print()
+    view_grid(game_grid)
 
 def view_grid(grid):
     """
     Prints out the current grid
     """
-    pass
+    # set up each row
+    squares = ['1','2','3','4','5','6','7','8','9']
+    for i in range(0,9):
+        if grid[i] == PLAYER_O_INDEX:
+            squares[i] = 'O'
+        if grid[i] == PLAYER_X_INDEX:
+            squares[i] = 'X'
+
+    #print out rows
+    print(f"{squares[0]}|{squares[1]}|{squares[2]}")
+    print("-+-+-")
+    print(f"{squares[3]}|{squares[4]}|{squares[5]}")
+    print("-+-+-")
+    print(f"{squares[6]}|{squares[7]}|{squares[8]}")
 
 def turn(grid, square, player_num):
     """
     changes the number in the grid
     """
-    pass
+    grid[square-1] = player_num
+    return grid
 
 def check_win(grid):
     """
