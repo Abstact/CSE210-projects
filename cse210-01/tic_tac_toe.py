@@ -49,8 +49,9 @@ def main():
             player_mark = 'X'
 
         #print(turn_num)
-        print()
+        
         view_grid(game_grid)
+        print()
 
         # Get user input
         square = int(input(f"{player_mark}'s turn to choose a square (1-9): "))
@@ -59,13 +60,24 @@ def main():
 
         game_grid = turn(game_grid, square, player_turn)
 
-        if check_win(game_grid) != 0:
-            turn_num = 10
+        win = check_win(game_grid)
+        # print(f"win - {win}"
+        if win != 0:
+            break
 
 
     # winner printout
     print()
     view_grid(game_grid)
+    winner = check_win(game_grid)
+    if winner == 0:
+        print("It's a tie!")
+    elif winner == 1:
+        print("X's victory!")
+    elif winner == 2:
+        print("O's win!")
+
+    print("Thanks for playing!")
 
 def view_grid(grid):
     """
@@ -80,11 +92,11 @@ def view_grid(grid):
             squares[i] = 'X'
 
     #print out rows
-    print(f"{squares[0]}|{squares[1]}|{squares[2]}")
-    print("-+-+-")
-    print(f"{squares[3]}|{squares[4]}|{squares[5]}")
-    print("-+-+-")
-    print(f"{squares[6]}|{squares[7]}|{squares[8]}")
+    print(f"     {squares[0]}|{squares[1]}|{squares[2]}")
+    print("     -+-+-")
+    print(f"     {squares[3]}|{squares[4]}|{squares[5]}")
+    print("     -+-+-")
+    print(f"     {squares[6]}|{squares[7]}|{squares[8]}")
 
 def turn(grid, square, player_num):
     """
@@ -101,7 +113,29 @@ def check_win(grid):
         1 for X win
         2 for O win
     """
-    pass
+    # check rows
+    if grid[0] == grid[1] == grid[2] and grid[0] != 0:
+        return grid[0]
+    if grid[3] == grid[4] == grid[5] and grid[3] != 0:
+        return grid[3]
+    if grid[6] == grid[7] == grid[8] and grid[6] != 0:
+        return grid[6]
+
+    # check columns
+    if grid[0] == grid[3] == grid[6] and grid[0] != 0:
+        return grid[0]
+    if grid[1] == grid[4] == grid[7] and grid[1] != 0:
+        return grid[1]
+    if grid[2] == grid[5] == grid[8] and grid[2] != 0:
+        return grid[2]
+
+    # check diagnals
+    if grid[0] == grid[4] == grid[8] and grid[4] != 0:
+        return grid[4]
+    if grid[2] == grid[4] == grid[6] and grid[4] != 0:
+        return grid[4]
+
+    return 0
 
 # run main function
 if __name__ == "__main__":
