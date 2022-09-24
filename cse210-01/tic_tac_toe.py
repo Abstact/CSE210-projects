@@ -138,5 +138,4 @@ def check_win(grid):
     return 0
 
 # run main function
-if __name__ == "__main__":
 main()
