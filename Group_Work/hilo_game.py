@@ -4,6 +4,9 @@ def main():
     pass
 # This is Chris's Comment
 class Director:
+    '''
+    insert class comment here
+    '''
     #THIS IS A COMMENT 
     def __init__(self):
         pass
