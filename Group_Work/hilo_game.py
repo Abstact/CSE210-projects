@@ -11,7 +11,10 @@ class Director:
 class Card:
     def __init__(self):
         pass
-    # test commet
+    # testing if we can remember the last card
+    """
+    code to be added by JR later
+    """
     def getCard():
         return random.randrange(1,13)
 
