@@ -13,13 +13,15 @@ class Director:
 
 class Card:
     def __init__(self):
-        pass
+        self.lastCard = random.randrange(1,13)
     # testing if we can remember the last card
     """
     code to be added by JR later
     """
     def getCard():
-        return random.randrange(1,13)
+        newCard = random.randrange(1,13)
+        # lastCard = newCard
+        return newCard
 
 if __name__ == "__main__":
     main()
