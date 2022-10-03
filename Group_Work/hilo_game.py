@@ -26,6 +26,8 @@ def main():
                 print("Congratulations, you guessed correctly!")
     else:
         print("Game Over! Thank you for playing.")
+
+    """Pressing N doesn't end the game"""
     
 # This is Chris's Comment
 class Director:
