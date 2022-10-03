@@ -1,7 +1,32 @@
 import random
 
 def main():
-    pass
+
+    play = input("Do you want to play High/Low? Y or N? ")
+    
+    while play == "y" or "Y":
+
+        print("The current card is: ")
+        guess = input("Guess H for high or L for low." )
+        if guess == "h" or "H":
+            if """Needs a value""" > """Needs a value""":
+                print("Congratulations, you guessed correctly!")
+                play = input("Play again? Y or N? ")
+
+            if """Needs a value""" < """Needs a value""":
+                print("Unfortunately, you lost!")
+                play = input("Play again? Y or N? ")
+
+        if guess == "l" or "L":
+            if """Needs a value""" > """Needs a value""":
+                print("Unfortunately, you lost!")
+                play = input("Play again? Y or N? ")
+
+            if """Needs a value""" < """Needs a value""":
+                print("Congratulations, you guessed correctly!")
+    else:
+        print("Game Over! Thank you for playing.")
+    
 # This is Chris's Comment
 class Director:
     '''
