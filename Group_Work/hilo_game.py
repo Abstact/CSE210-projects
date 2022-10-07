@@ -93,10 +93,11 @@ class Director:
 #Draws a random card from 1-13
 class Card:
     '''
-    A class that takes a random number from 1-14 to be used in the game.
+    A class that takes a random number from 1-13 to be used in the game.
     '''
     def __init__(self):
         self.value = 0
+        
     def draw_card(self):
         self.value = random.randrange(1,14)
 
@@ -110,11 +111,13 @@ class Player:
     def __init__(self):
         self.points = 300
         self.guess_high = True
+
     def wrong(self):
         '''
         Deducts 75 points for every wrong guess.
         '''
         self.points -= 75
+
     def right(self):
         '''
         Adds 100 points for every correct guess.
