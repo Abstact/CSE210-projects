@@ -1,4 +1,4 @@
-This code was created by JR Ogden, Nathan Rowley, Marielle Chiong, and Chris Lynch (cjlynch@byui.edu).
+This code was created by JR Ogden, Nathan Rowley, Marielle Honey Chiong (chi22003@byui.edu), and Chris Lynch (cjlynch@byui.edu).
 
 Project:
 Hi/Lo Game
