@@ -10,7 +10,7 @@ if the next card will be higher or lower than the previous card. The user starts
 want to continue to play the game. If the player loses all points, the game will be over and will get the option to play again, where the
 points will reset.
 
-Class(es):
+Classes:
 There are 3 classes within the program. There is a director, card and player class. Within each class there are multiple functions and
 loops to help the user run through the program without any errors.
 
