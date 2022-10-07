@@ -12,6 +12,10 @@ There are 3 classes within the program. There is a director, card and player cla
 loops to help the user run through the program without any errors.
 
 Other notes:
+This program is an introduction to our group efforts. As we learn and figure out how to work together more, our programs will develop
+and become more efficient.
 
+Zoom meetings were held and there were some hinderances with figuring out how to get together and make it work, but we were able to
+communicate and provide a finished product.
 
   
