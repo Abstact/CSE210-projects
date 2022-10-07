@@ -1,4 +1,7 @@
-This code was created by JR Ogden, Nathan Rowley, Marielle Chiong, and Chris Lynch.
+This code was created by JR Ogden, Nathan Rowley, Marielle Chiong, and Chris Lynch (cjlynch@byui.edu).
+
+Project:
+Hi/Lo Game
 
 General use:
 The program loops through the various classes and functions to create a hilo game. The purpose of the game is to ask the user to guess
@@ -7,7 +10,7 @@ if the next card will be higher or lower than the previous card. The user starts
 want to continue to play the game. If the player loses all points, the game will be over and will get the option to play again, where the
 points will reset.
 
-Class(es)
+Class(es):
 There are 3 classes within the program. There is a director, card and player class. Within each class there are multiple functions and
 loops to help the user run through the program without any errors.
 
@@ -18,4 +21,5 @@ and become more efficient.
 Zoom meetings were held and there were some hinderances with figuring out how to get together and make it work, but we were able to
 communicate and provide a finished product.
 
-  
+A repository was created for the group to work on the same project together called hilo_game.py. The group created code while pushing and
+pulling to the repository to save changes to the game.
