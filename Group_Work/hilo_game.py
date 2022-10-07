@@ -111,8 +111,14 @@ class Player:
         self.points = 300
         self.guess_high = True
     def wrong(self):
+        '''
+        Deducts 75 points for every wrong guess.
+        '''
         self.points -= 75
     def right(self):
+        '''
+        Adds 100 points for every correct guess.
+        '''
         self.points += 100
 
 
