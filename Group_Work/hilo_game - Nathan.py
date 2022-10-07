@@ -46,6 +46,7 @@ class Director:
         self.compare()
         
         print(f"Your score: {str(self.you.points)}")
+        print()
 
     def cleanup(self):
         if not self.playing:
@@ -56,6 +57,7 @@ class Director:
 
         while True:
             play_again = input("Play Again? [y/n]")
+            print()
             if play_again.lower() == "y":
                 self.previous_card.value = self.next_card.value
                 self.playing = True
