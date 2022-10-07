@@ -85,12 +85,20 @@ class Director:
         
 
 class Card:
+    '''
+    A class that takes a random number from 1-14 to be used in the game.
+    '''
     def __init__(self):
         self.value = 0
     def draw_card(self):
         self.value = random.randrange(1,14)
 
 class Player:
+    '''
+    A class that computes the score of the player. The user starts out 
+    with 300 points. The player gets 100 additional points for each 
+    correct guess but loses 75 points if the player guessed otherwise.
+    '''
     def __init__(self):
         self.points = 300
         self.guess_high = True
