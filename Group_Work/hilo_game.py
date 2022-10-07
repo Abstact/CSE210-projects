@@ -1,10 +1,12 @@
 import random
 
+#Combines the game.
 def main():
     print("Welcome to Hi-Lo!")
     director = Director()
     director.play_game()
 
+#Creates a class to ask user input and establish card value for user.
 class Director:
     def __init__(self):
         self.playing = True
@@ -17,7 +19,8 @@ class Director:
         while self.playing:
             self.hi_lo()
             self.cleanup()
-    
+
+#Allows the user to guess if their card is higher or lower and determines the value of the card.
     def hi_lo(self):
         if not self.playing:
             return
@@ -48,6 +51,7 @@ class Director:
         print(f"Your score: {str(self.you.points)}")
         print()
 
+#Allows the game to be over when the user's points goes to 0. Also allows the user to play again.
     def cleanup(self):
         if not self.playing:
             return
@@ -65,7 +69,8 @@ class Director:
             elif play_again.lower() == "n":
                 self.playing = False
                 return
-    
+
+#Compares the previous card with the drawn card to determine if user wins or loses.
     def compare(self):
         card1 = self.previous_card.value
         card2 = self.next_card.value
@@ -85,13 +90,14 @@ class Director:
                 self.you.wrong()
                 print("Too Bad!")
         
-
+#Draws a random card from 1-13
 class Card:
     def __init__(self):
         self.value = 0
     def draw_card(self):
         self.value = random.randrange(1,14)
 
+#Establishes starting points of 300 and both adds and subracts points if the user wins or loses.
 class Player:
     def __init__(self):
         self.points = 300
@@ -100,6 +106,7 @@ class Player:
         self.points -= 75
     def right(self):
         self.points += 100
+
 
 if __name__ == "__main__":
     main()
