@@ -8,6 +8,9 @@ def main():
 
 #Creates a class to ask user input and establish card value for user.
 class Director:
+    '''
+    Class that runs and controls the game.
+    '''
     def __init__(self):
         self.playing = True
         self.previous_card = Card()
@@ -58,6 +61,8 @@ class Director:
         
         if self.you.points <= 0:
             print("GAME OVER")
+            self.playing = False
+            return
 
         while True:
             play_again = input("Play Again? [y/n]")
