@@ -18,71 +18,71 @@ class parachuter:
 
     print(RandomWord)
 
-    wordList = list(word)
+#     wordList = list(word)
 
-    wordAnswer = []
-    for i in range(len(word)):
-	    wordAnswer.append('_')
+#     wordAnswer = []
+#     for i in range(len(word)):
+# 	    wordAnswer.append('_')
 
-    maxStates = 6
-#keep on taking inputs while the either wins or hangman reaches state 7
-    def printState(guesses):
-	    myString = ""
+#     guesses = 6
+# #keep on taking inputs while the either wins or hangman reaches state 7
+#     def printState(guesses):
+# 	    myString = ""
 
-	    if guesses == 1:
-		    myString = "________      "
-		    myString  = myString + '\n' + "|      ___      "
-		    myString  = myString + '\n' + "|     /   \     "
-		    myString  = myString + '\n' + "|      ---      "
-		    myString  = myString + '\n' + "|      \  /     "
-		    myString  = myString + '\n' + "|       \/      "
-            myString  = myString + '\n' + "|       0       "
-            myString  = myString + '\n' + "|     / | \     "
-            myString  = myString + '\n' + "|      / \      "
-            myString  = myString + '\n' + "|               "
-            myString  = myString + '\n' + "|   ^^^^^^^^^   "
-        elif guesses == 2:
-            myString  = "________      "
-            myString  = myString + '\n' + "|     /   \     "
-            myString  = myString + '\n' + "|      ---      "
-            myString  = myString + '\n' + "|      \  /     "
-            myString  = myString + '\n' + "|       \/      "
-            myString  = myString + '\n' + "|       0       "
-            myString  = myString + '\n' + "|     / | \     "
-            myString  = myString + '\n' + "|      / \      "
-            myString  = myString + '\n' + "|               "
-            myString  = myString + '\n' + "|   ^^^^^^^^^   "
-        elif guesses == 3:
-            myString  = "________      "
-            myString  = myString + '\n' + "|      ---      "
-            myString  = myString + '\n' + "|      \  /     "
-            myString  = myString + '\n' + "|       \/      "
-            myString  = myString + '\n' + "|       0       "
-            myString  = myString + '\n' + "|     / | \     "
-            myString  = myString + '\n' + "|      / \      "
-            myString  = myString + '\n' + "|               "
-            myString  = myString + '\n' + "|   ^^^^^^^^^   "
-        elif guesses == 4:
-            myString  = "________      "
-            myString  = myString + '\n' + "|      \  /     "
-            myString  = myString + '\n' + "|       \/      "
-            myString  = myString + '\n' + "|       0       "
-            myString  = myString + '\n' + "|     / | \     "
-            myString  = myString + '\n' + "|      / \      "
-            myString  = myString + '\n' + "|               "
-            myString  = myString + '\n' + "|   ^^^^^^^^^   "
-        elif guesses == 5:
-            myString = "________      "
-            myString  = myString + '\n' + "|       \/      "
-            myString  = myString + '\n' + "|       0       "
-            myString  = myString + '\n' + "|     / | \     "
-            myString  = myString + '\n' + "|      / \      "
-            myString  = myString + '\n' + "|               "
-            myString  = myString + '\n' + "|   ^^^^^^^^^   "
-        else:
-            myString = "________      "
-            myString  = myString + '\n' + "|       X       "
-            myString  = myString + '\n' + "|     / | \     "
-            myString  = myString + '\n' + "|      / \      "
-            myString  = myString + '\n' + "|               "
-            myString  = myString + '\n' + "|   ^^^^^^^^^   "
+# 	    if guesses == 1:
+# 		    myString = "________      "
+# 		    myString  = myString + '\n' + "|      ___      "
+# 		    myString  = myString + '\n' + "|     /   \     "
+# 		    myString  = myString + '\n' + "|      ---      "
+# 		    myString  = myString + '\n' + "|      \  /     "
+# 		    myString  = myString + '\n' + "|       \/      "
+#             myString  = myString + '\n' + "|       0       "
+#             myString  = myString + '\n' + "|     / | \     "
+#             myString  = myString + '\n' + "|      / \      "
+#             myString  = myString + '\n' + "|               "
+#             myString  = myString + '\n' + "|   ^^^^^^^^^   "
+#         elif guesses == 2:
+#             myString  = "________      "
+#             myString  = myString + '\n' + "|     /   \     "
+#             myString  = myString + '\n' + "|      ---      "
+#             myString  = myString + '\n' + "|      \  /     "
+#             myString  = myString + '\n' + "|       \/      "
+#             myString  = myString + '\n' + "|       0       "
+#             myString  = myString + '\n' + "|     / | \     "
+#             myString  = myString + '\n' + "|      / \      "
+#             myString  = myString + '\n' + "|               "
+#             myString  = myString + '\n' + "|   ^^^^^^^^^   "
+#         elif guesses == 3:
+#             myString  = "________      "
+#             myString  = myString + '\n' + "|      ---      "
+#             myString  = myString + '\n' + "|      \  /     "
+#             myString  = myString + '\n' + "|       \/      "
+#             myString  = myString + '\n' + "|       0       "
+#             myString  = myString + '\n' + "|     / | \     "
+#             myString  = myString + '\n' + "|      / \      "
+#             myString  = myString + '\n' + "|               "
+#             myString  = myString + '\n' + "|   ^^^^^^^^^   "
+#         elif guesses == 4:
+#             myString  = "________      "
+#             myString  = myString + '\n' + "|      \  /     "
+#             myString  = myString + '\n' + "|       \/      "
+#             myString  = myString + '\n' + "|       0       "
+#             myString  = myString + '\n' + "|     / | \     "
+#             myString  = myString + '\n' + "|      / \      "
+#             myString  = myString + '\n' + "|               "
+#             myString  = myString + '\n' + "|   ^^^^^^^^^   "
+#         elif guesses == 5:
+#             myString = "________      "
+#             myString  = myString + '\n' + "|       \/      "
+#             myString  = myString + '\n' + "|       0       "
+#             myString  = myString + '\n' + "|     / | \     "
+#             myString  = myString + '\n' + "|      / \      "
+#             myString  = myString + '\n' + "|               "
+#             myString  = myString + '\n' + "|   ^^^^^^^^^   "
+#         else:
+#             myString = "________      "
+#             myString  = myString + '\n' + "|       X       "
+#             myString  = myString + '\n' + "|     / | \     "
+#             myString  = myString + '\n' + "|      / \      "
+#             myString  = myString + '\n' + "|               "
+#             myString  = myString + '\n' + "|   ^^^^^^^^^   "
