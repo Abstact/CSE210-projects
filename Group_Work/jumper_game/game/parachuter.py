@@ -6,24 +6,83 @@ printing of image for game
 """
 import random
 
-with open("wordlist.txt", "r") as file:
-    allText = file.read()
-    words = list(map(str, allText.split()))
-  
-    # print random string
-    print(random.choice(words))
-#class parachuter:
+class parachuter:
 
 
-#       ___
-#      /   \
-#       ---
-#       \  /
-#        \/
-#         0
-#       / | \
-#        / \
-#
-#     ^^^^^^^^^
+    words = []
+    with open('wordlist.txt','r') as f:
+        for line in f:
+            for word in line.split():
+                words.append(word)
+    RandomWord = random.choice(words)
 
-    
+    print(RandomWord)
+
+    wordList = list(word)
+
+    wordAnswer = []
+    for i in range(len(word)):
+	    wordAnswer.append('_')
+
+    maxStates = 6
+#keep on taking inputs while the either wins or hangman reaches state 7
+    def printState(guesses):
+	    myString = ""
+
+	    if guesses == 1:
+		    myString = "________      "
+		    myString  = myString + '\n' + "|      ___      "
+		    myString  = myString + '\n' + "|     /   \     "
+		    myString  = myString + '\n' + "|      ---      "
+		    myString  = myString + '\n' + "|      \  /     "
+		    myString  = myString + '\n' + "|       \/      "
+            myString  = myString + '\n' + "|       0       "
+            myString  = myString + '\n' + "|     / | \     "
+            myString  = myString + '\n' + "|      / \      "
+            myString  = myString + '\n' + "|               "
+            myString  = myString + '\n' + "|   ^^^^^^^^^   "
+        elif guesses == 2:
+            myString  = "________      "
+            myString  = myString + '\n' + "|     /   \     "
+            myString  = myString + '\n' + "|      ---      "
+            myString  = myString + '\n' + "|      \  /     "
+            myString  = myString + '\n' + "|       \/      "
+            myString  = myString + '\n' + "|       0       "
+            myString  = myString + '\n' + "|     / | \     "
+            myString  = myString + '\n' + "|      / \      "
+            myString  = myString + '\n' + "|               "
+            myString  = myString + '\n' + "|   ^^^^^^^^^   "
+        elif guesses == 3:
+            myString  = "________      "
+            myString  = myString + '\n' + "|      ---      "
+            myString  = myString + '\n' + "|      \  /     "
+            myString  = myString + '\n' + "|       \/      "
+            myString  = myString + '\n' + "|       0       "
+            myString  = myString + '\n' + "|     / | \     "
+            myString  = myString + '\n' + "|      / \      "
+            myString  = myString + '\n' + "|               "
+            myString  = myString + '\n' + "|   ^^^^^^^^^   "
+        elif guesses == 4:
+            myString  = "________      "
+            myString  = myString + '\n' + "|      \  /     "
+            myString  = myString + '\n' + "|       \/      "
+            myString  = myString + '\n' + "|       0       "
+            myString  = myString + '\n' + "|     / | \     "
+            myString  = myString + '\n' + "|      / \      "
+            myString  = myString + '\n' + "|               "
+            myString  = myString + '\n' + "|   ^^^^^^^^^   "
+        elif guesses == 5:
+            myString = "________      "
+            myString  = myString + '\n' + "|       \/      "
+            myString  = myString + '\n' + "|       0       "
+            myString  = myString + '\n' + "|     / | \     "
+            myString  = myString + '\n' + "|      / \      "
+            myString  = myString + '\n' + "|               "
+            myString  = myString + '\n' + "|   ^^^^^^^^^   "
+        else:
+            myString = "________      "
+            myString  = myString + '\n' + "|       X       "
+            myString  = myString + '\n' + "|     / | \     "
+            myString  = myString + '\n' + "|      / \      "
+            myString  = myString + '\n' + "|               "
+            myString  = myString + '\n' + "|   ^^^^^^^^^   "
