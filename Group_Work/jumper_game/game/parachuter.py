@@ -25,7 +25,6 @@ class parachuter:
 # 	    wordAnswer.append('_')
 
 #     guesses = 6
-# #keep on taking inputs while the either wins or hangman reaches state 7
 #     def printState(guesses):
 # 	    myString = ""
 
@@ -36,11 +35,11 @@ class parachuter:
 # 		    myString  = myString + '\n' + "|      ---      "
 # 		    myString  = myString + '\n' + "|      \  /     "
 # 		    myString  = myString + '\n' + "|       \/      "
-#             myString  = myString + '\n' + "|       0       "
-#             myString  = myString + '\n' + "|     / | \     "
-#             myString  = myString + '\n' + "|      / \      "
-#             myString  = myString + '\n' + "|               "
-#             myString  = myString + '\n' + "|   ^^^^^^^^^   "
+#           myString  = myString + '\n' + "|       0       "
+#           myString  = myString + '\n' + "|     / | \     "
+#           myString  = myString + '\n' + "|      / \      "
+#           myString  = myString + '\n' + "|               "
+#           myString  = myString + '\n' + "|   ^^^^^^^^^   "
 #         elif guesses == 2:
 #             myString  = "________      "
 #             myString  = myString + '\n' + "|     /   \     "
