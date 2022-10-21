@@ -27,15 +27,15 @@ class parachuter:
     maxStates = 6
 #keep on taking inputs while the either wins or hangman reaches state 7
     def printState(guesses):
-	    myString = ""
+        myString = ""
 
-	    if guesses == 1:
-		    myString = "________      "
-		    myString  = myString + '\n' + "|      ___      "
-		    myString  = myString + '\n' + "|     /   \     "
-		    myString  = myString + '\n' + "|      ---      "
-		    myString  = myString + '\n' + "|      \  /     "
-		    myString  = myString + '\n' + "|       \/      "
+        if guesses == 1:
+            myString = "________      "
+            myString  = myString + '\n' + "|      ___      "
+            myString  = myString + '\n' + "|     /   \     "
+            myString  = myString + '\n' + "|      ---      "
+            myString  = myString + '\n' + "|      \  /     "
+            myString  = myString + '\n' + "|       \/      "
             myString  = myString + '\n' + "|       0       "
             myString  = myString + '\n' + "|     / | \     "
             myString  = myString + '\n' + "|      / \      "

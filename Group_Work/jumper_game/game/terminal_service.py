@@ -14,20 +14,26 @@ Functions:
         -
 
 """
+import parachuter
+
 class Terminal_service:
     def Rules_prompt():
         print("Welcome to Jumper!")
         print("You are tasked with guessing a word one letter at a time. Be careful though, as each wrong letter will take some of your parachute away! Too many wrong guesses will cause you to make a quicker landing than was planned.")
 
     
-    def print_word(guesses):
-        pass
+    def print_word(word):
+        print(word)
 
     def print_guy(hp):
-        pass
+        parachuter.printState(hp)
 
-    def game_over():
-        pass
+    def game_over(word):
+        print("GAME OVER")
+        print("Too many wrong guesses")
+        print("The word was " + word)
 
     def game_won(word):
-        pass
+        print("CONGRATS! You won!")
+        print("The word was " + word)
+
