@@ -46,7 +46,7 @@ class Director:
         if not self.playing:
             return
         self.parachuter.create_print() #This creates a string for terminal to use that has guessed letters filled in and missing ones left as blank
-        self.terminal.print_word(self.user.print) #This prints off the string created by parachuter
+        self.terminal.print_word(self.parachuter.print) #This prints off the string created by parachuter
         self.terminal.print_guy(self.parachuter.hp) #Prints the parachuter himself. It will update based off the "hp" or health the parachuter has
     
     def get_inputs(self):
