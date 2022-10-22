@@ -36,6 +36,7 @@ class Director:
         self.user = User()
 
     def play_game(self):
+        self.terminal.Rules_prompt() #Prints rules
         self.parachuter.choose_word() #Chooses a word in the parachuter class. Try breaking this word up into indiviual letters in a list
         while self.playing: #Loops until user wins or loses
             self.print_parachuter()
@@ -53,14 +54,14 @@ class Director:
         if not self.playing:
             return
         guess = self.user.get_input() #Returns the letter the user guessed. Make sure the user only has one letter
-        self.parachuter.guessed_letters.append(guess)
-        if guess not in self.parachuter.letters:
+        self.parachuter.guessed_letters.append(guess) #Adds guessed letter to list of guesed letters
+        if guess not in self.parachuter.letters: #Incorrect guessed result in hp loss
             self.parachuter.hp -= 1
     
     def clean_up(self):
         if not self.playing:
             return
-        self.parachuter.check_word()
+        self.parachuter.check_word() #Chekcs to see if the word is complete
         if self.parachuter.hp <= 0: #Ends the game if the parachuter has lost all of its parachute
             self.playing = False
             self.terminal.game_over(self.parachuter.RandomWord)

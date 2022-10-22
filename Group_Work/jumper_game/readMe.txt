@@ -1,8 +1,18 @@
-Director - directs the game, while loop calling functions, etc.
+Jumper
 
-Terminal service - I/o from player
-(Checks input, displays stuff)
+A hangman type game where the user must guess letters in an attempt to save the jumper from a tearing parachute. The game ends after 5 unsuccessful guesses and the jumper dies or the word is complete.
 
-User - interpreting inputs
+Project Structure:
+Director: Manages all variables and runs the game
+Parachuter: Controls the word as well as checks to see how much of the word is filled in
+Terminal Services: Manages all printing done
+User: Manages incoming inputs and validates them
 
-Parachuter - basically a variable, parachute state, secret word, guessed letters
+Required Software:
+Python
+
+Team Members:
+Nathan Rowley
+Chris Lynch
+Marielle Honey Chiong
+JR Ogden

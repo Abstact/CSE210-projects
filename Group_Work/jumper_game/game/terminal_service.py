@@ -16,14 +16,14 @@ Functions:
 """
 
 class Terminal_service:
-    def Rules_prompt():
+    def Rules_prompt(): #Prints Rules
         print("Welcome to Jumper!")
         print("You are tasked with guessing a word one letter at a time. Be careful though, as each wrong letter will take some of your parachute away! Too many wrong guesses will cause you to make a quicker landing than was planned.")
 
-    def print_word(self, word):
+    def print_word(self, word): #Prints given word
         print(word)
 
-    def print_guy(self, hp):
+    def print_guy(self, hp): #Prints the parachuter based off health
         myString = ""
 
         if hp == 5:
@@ -85,12 +85,12 @@ class Terminal_service:
             myString  = myString + '\n' + "|   ^^^^^^^^^   "
         print(myString)
 
-    def game_over(self, word):
+    def game_over(self, word): #Prints off loss message with complete word
         print("GAME OVER")
         print("Too many wrong guesses")
         print("The word was " + word)
 
-    def game_won(self, word):
+    def game_won(self, word): #Prints off win message with complete word
         print("CONGRATS! You won!")
         print("The word was " + word)
 
