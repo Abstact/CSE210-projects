@@ -1,6 +1,6 @@
-from Group_Work.jumper_game.game.parachuter import Parachuter
-from Group_Work.jumper_game.game.terminal_service import Terminal_service
-from Group_Work.jumper_game.game.user import User
+from game.parachuter import Parachuter
+from game.terminal_service import Terminal_service
+from game.user import User
 
 '''
 Code Explination:
@@ -53,7 +53,7 @@ class Director:
         if not self.playing:
             return
         guess = self.user.get_input() #Returns the letter the user guessed. Make sure the user only has one letter
-        self.user.guessed_letters.append(guess)
+        self.parachuter.guessed_letters.append(guess)
         if guess not in self.parachuter.letters:
             self.parachuter.hp -= 1
     
@@ -63,7 +63,7 @@ class Director:
         self.parachuter.check_word()
         if self.parachuter.hp <= 0: #Ends the game if the parachuter has lost all of its parachute
             self.playing = False
-            self.terminal.game_over(self.parachuter.word)
+            self.terminal.game_over(self.parachuter.RandomWord)
         elif self.parachuter.word_complete: #Ends game if boolean valiable 'word_complete' is true
             self.playing = False
-            self.terminal.game_won(self.parachuter.word)
+            self.terminal.game_won(self.parachuter.RandomWord)

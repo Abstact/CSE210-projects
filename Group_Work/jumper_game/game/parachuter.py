@@ -6,83 +6,37 @@ printing of image for game
 """
 import random
 
-class parachuter:
-
-
-    words = []
-    with open('wordlist.txt','r') as f:
-        for line in f:
-            for word in line.split():
-                words.append(word)
-    RandomWord = random.choice(words)
-
-    print(RandomWord)
-
-    wordList = list(word)
-
-    wordAnswer = []
-    for i in range(len(word)):
-	    wordAnswer.append('_')
-
-    maxStates = 6
-#keep on taking inputs while the either wins or hangman reaches state 7
-    def printState(guesses):
-        myString = ""
-
-        if guesses == 1:
-            myString = "________      "
-            myString  = myString + '\n' + "|      ___      "
-            myString  = myString + '\n' + "|     /   \     "
-            myString  = myString + '\n' + "|      ---      "
-            myString  = myString + '\n' + "|      \  /     "
-            myString  = myString + '\n' + "|       \/      "
-            myString  = myString + '\n' + "|       0       "
-            myString  = myString + '\n' + "|     / | \     "
-            myString  = myString + '\n' + "|      / \      "
-            myString  = myString + '\n' + "|               "
-            myString  = myString + '\n' + "|   ^^^^^^^^^   "
-        elif guesses == 2:
-            myString  = "________      "
-            myString  = myString + '\n' + "|     /   \     "
-            myString  = myString + '\n' + "|      ---      "
-            myString  = myString + '\n' + "|      \  /     "
-            myString  = myString + '\n' + "|       \/      "
-            myString  = myString + '\n' + "|       0       "
-            myString  = myString + '\n' + "|     / | \     "
-            myString  = myString + '\n' + "|      / \      "
-            myString  = myString + '\n' + "|               "
-            myString  = myString + '\n' + "|   ^^^^^^^^^   "
-        elif guesses == 3:
-            myString  = "________      "
-            myString  = myString + '\n' + "|      ---      "
-            myString  = myString + '\n' + "|      \  /     "
-            myString  = myString + '\n' + "|       \/      "
-            myString  = myString + '\n' + "|       0       "
-            myString  = myString + '\n' + "|     / | \     "
-            myString  = myString + '\n' + "|      / \      "
-            myString  = myString + '\n' + "|               "
-            myString  = myString + '\n' + "|   ^^^^^^^^^   "
-        elif guesses == 4:
-            myString  = "________      "
-            myString  = myString + '\n' + "|      \  /     "
-            myString  = myString + '\n' + "|       \/      "
-            myString  = myString + '\n' + "|       0       "
-            myString  = myString + '\n' + "|     / | \     "
-            myString  = myString + '\n' + "|      / \      "
-            myString  = myString + '\n' + "|               "
-            myString  = myString + '\n' + "|   ^^^^^^^^^   "
-        elif guesses == 5:
-            myString = "________      "
-            myString  = myString + '\n' + "|       \/      "
-            myString  = myString + '\n' + "|       0       "
-            myString  = myString + '\n' + "|     / | \     "
-            myString  = myString + '\n' + "|      / \      "
-            myString  = myString + '\n' + "|               "
-            myString  = myString + '\n' + "|   ^^^^^^^^^   "
-        else:
-            myString = "________      "
-            myString  = myString + '\n' + "|       X       "
-            myString  = myString + '\n' + "|     / | \     "
-            myString  = myString + '\n' + "|      / \      "
-            myString  = myString + '\n' + "|               "
-            myString  = myString + '\n' + "|   ^^^^^^^^^   "
+class Parachuter:
+    def __init__(self) -> None:
+        self.words = []
+        self.RandomWord = ""
+        self.letters = []
+        self.print = ""
+        self.guessed_letters = []
+        self.hp = 5
+        self.word_complete = False
+        with open("game/wordlist.txt",'r') as f:
+            for line in f:
+                for word in line.split():
+                    self.words.append(word)
+        
+    def choose_word(self):
+        self.RandomWord = random.choice(self.words)
+        for x in range(len(self.RandomWord)):
+            self.letters.append(self.RandomWord[x])
+    
+    def create_print(self):
+        self.print = ""
+        for x in self.letters:
+            if x in self.guessed_letters:
+                self.print += f" {x.upper()} "
+            else:
+                self.print += f" _ "
+    
+    def check_word(self):
+        for y in self.letters:
+            if y in self.guessed_letters:
+                self.word_complete = True
+            else:
+                self.word_complete = False
+                break

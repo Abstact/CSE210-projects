@@ -9,8 +9,7 @@ main():
 """
 
 class User:
-
-    def main():
+    def get_input(self):
         """
             Gets the letter guessed by the user. Also makes 
             sure that the user input is only one letter.
@@ -33,6 +32,3 @@ class User:
 
         except TypeError or Exception as err:
             print(f"Error found: {err}") # Prints the error if found
-
-
-    main() # Runs the main function
