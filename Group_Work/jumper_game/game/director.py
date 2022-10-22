@@ -63,7 +63,7 @@ class Director:
         self.parachuter.check_word()
         if self.parachuter.hp <= 0: #Ends the game if the parachuter has lost all of its parachute
             self.playing = False
-            self.terminal.game_over()
+            self.terminal.game_over(self.parachuter.word)
         elif self.parachuter.word_complete: #Ends game if boolean valiable 'word_complete' is true
             self.playing = False
             self.terminal.game_won(self.parachuter.word)
