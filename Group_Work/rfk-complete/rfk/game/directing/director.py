@@ -40,6 +40,7 @@ class Director:
         """
         robot = cast.get_first_actor("robots")
         velocity = self._keyboard_service.get_direction()
+        velocity._y = 0 #constrains the velocity to x axis only
         robot.set_velocity(velocity)        
 
     def _do_updates(self, cast):
