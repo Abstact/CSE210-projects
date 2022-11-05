@@ -90,6 +90,25 @@ class Director:
                 cast.remove_actor("rocks", rock)
             elif y > max_y - cell_size:
                 cast.remove_actor("rocks", rock)
+
+        if len(artifacts) < MAX_ARTIFACTS:
+            if random.randrange(0,10) == 8:
+                new_artifact = Artifact()
+
+                column = int(max_x / cell_size)
+                location = Point(random.randrange(column) * cell_size, 0)
+                new_artifact.set_position(location)
+                cast.add_actor("rocks", new_artifact)
+
+        for artifact in artifacts:
+            artifact.move_next(max_x, max_y)
+            y = artifact.get_position().get_y()
+
+            if robot.get_position().equals(artifact.get_position()):
+                self._add_score(artifacts.get_points())
+                cast.remove_actor("artifact", artifact)
+            elif y > max_y - cell_size:
+                cast.remove_actor("artifacts", artifact)
         
     def _do_outputs(self, cast):
         """Draws the actors on the screen.
