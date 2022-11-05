@@ -1,3 +1,14 @@
+import random
+
+from game.casting.rocks import Rock
+from game.casting.artifact import Artifact
+
+from game.shared.point import Point
+
+
+MAX_ARTIFACTS = 15
+MAX_ROCKS = 20
+
 class Director:
     """A person who directs the game. 
     
@@ -52,16 +63,33 @@ class Director:
         banner = cast.get_first_actor("banners")
         robot = cast.get_first_actor("robots")
         artifacts = cast.get_actors("artifacts")
+        rocks = cast.get_actors("rocks")
 
-        banner.set_text("")
+        cell_size = self._video_service.get_cell_size()
+
+        banner.set_text(f"Score: {self._get_score()}")
         max_x = self._video_service.get_width()
         max_y = self._video_service.get_height()
         robot.move_next(max_x, max_y)
-        
-        for artifact in artifacts:
-            if robot.get_position().equals(artifact.get_position()):
-                message = artifact.get_message()
-                banner.set_text(message)    
+
+        if len(rocks) < MAX_ROCKS:
+            if random.randrange(0,10) == 8:
+                new_rock = Rock()
+
+                column = int(max_x / cell_size)
+                location = Point(random.randrange(column) * cell_size, 0)
+                new_rock.set_position(location)
+                cast.add_actor("rocks", new_rock)
+
+        for rock in rocks:
+            rock.move_next(max_x, max_y)
+            y = rock.get_position().get_y()
+
+            if robot.get_position().equals(rock.get_position()):
+                self._add_score(rocks.get_points())
+                cast.remove_actor("rocks", rock)
+            elif y > max_y - cell_size:
+                cast.remove_actor("rocks", rock)
         
     def _do_outputs(self, cast):
         """Draws the actors on the screen.

@@ -80,10 +80,10 @@ def main():
         # artifact.set_message(message)
         cast.add_actor("artifacts", artifact)
 
-    artifact = artifact + SPEED
-    if artifact > MAX_Y:
-        MAX_X = random.randomrange(0, MAX_X)
-        artifact = -25
+    # artifact = artifact + SPEED
+    # if artifact > MAX_Y:
+    #     MAX_X = random.randomrange(0, MAX_X)
+    #     artifact = -25
 
     # start the game
     keyboard_service = KeyboardService(CELL_SIZE)

@@ -17,10 +17,10 @@ class Rock(Actor):
 
         super().set_points(-1) #removes a point for every rock hit
 
-        speed = random.randrange(1,10) # set the velocity
+        speed = random.randrange(1,15) # set the velocity
         super().set_velocity(Point(0,speed))
 
         red = random.randrange(150,200)
-        green, blue = random.randrange(50, 75) 
-        color = Color(red, green, blue) # random dark red color
+        green = random.randrange(50, 75) 
+        color = Color(red, green, green) # random dark red color
         super().set_color(color)
