@@ -40,9 +40,9 @@ def main():
     banner.set_position(Point(CELL_SIZE, 0))
     cast.add_actor("banners", banner)
     
-    # create the robot
+    # create the player
     x = int(MAX_X / 2)
-    y = int(MAX_Y / 2)
+    y = MAX_Y - CELL_SIZE # starts at the bottom
     position = Point(x, y)
 
     robot = Actor()
