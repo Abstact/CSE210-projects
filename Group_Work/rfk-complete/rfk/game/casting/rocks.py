@@ -3,6 +3,8 @@ from game.casting.actor import Actor;
 from game.shared.color import Color;
 from game.shared.point import Point;
 
+
+
 class Rock(Actor):
     """
         This is a Rock for the game.
