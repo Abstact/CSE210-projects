@@ -67,7 +67,7 @@ class Director:
             Returns the current score 
         """
         return self._score
-
+        
     def _do_updates(self, cast):
         """Updates the robot's position and resolves any collisions with artifacts.
         
@@ -81,6 +81,7 @@ class Director:
 
         cell_size = self._video_service.get_cell_size()
 
+        banner.set_text(f"Score: {self._get_score()}")
         max_x = self._video_service.get_width()
         max_y = self._video_service.get_height()
         robot.move_next(max_x, max_y)
@@ -94,6 +95,16 @@ class Director:
                 new_rock.set_position(location)
                 cast.add_actor("rocks", new_rock)
 
+        for rock in rocks:
+            rock.move_next(max_x, max_y)
+            y = rock.get_position().get_y()
+
+            if robot.get_position().equals(rock.get_position()):
+                self._add_score(rocks.get_points())
+                cast.remove_actor("rocks", rock)
+            elif y > max_y - cell_size:
+                cast.remove_actor("rocks", rock)
+
         if len(artifacts) < MAX_ARTIFACTS:
             if random.randrange(0,10) == 8:
                 new_artifact = Artifact()
@@ -103,27 +114,15 @@ class Director:
                 new_artifact.set_position(location)
                 cast.add_actor("rocks", new_artifact)
 
-        for rock in rocks:
-            rock.move_next(max_x, max_y)
-            y = rock.get_position().get_y()
-
-            if robot.get_position().close_enough(rock.get_position(), cell_size):
-                self._add_score(rock.get_points())
-                cast.remove_actor("rocks", rock)
-            elif y > max_y - cell_size:
-                cast.remove_actor("rocks", rock)
-
         for artifact in artifacts:
             artifact.move_next(max_x, max_y)
             y = artifact.get_position().get_y()
 
-            if robot.get_position().close_enough(artifact.get_position(), cell_size):
-                self._add_score(artifact.get_points())
+            if robot.get_position().equals(artifact.get_position()):
+                self._add_score(artifacts.get_points())
                 cast.remove_actor("artifact", artifact)
             elif y > max_y - cell_size:
                 cast.remove_actor("artifacts", artifact)
-
-        banner.set_text(f"Score: {self._get_score()}")
         
     def _do_outputs(self, cast):
         """Draws the actors on the screen.
