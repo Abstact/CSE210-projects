@@ -11,21 +11,8 @@ class Artifact(Actor):
         _message (string): A short description about the artifact.
     """
     def __init__(self):
-        super().__init__()
-        self._message = ""
+        super().__init__() 
+        super().set_text("*") #this is what the artifact will look like
+
+        super().set_points(+1) #this adds a point for each artifact hit
         
-    def get_message(self):
-        """Gets the artifact's message.
-        
-        Returns:
-            string: The message.
-        """
-        return self._message
-    
-    def set_message(self, message):
-        """Updates the message to the given one.
-        
-        Args:
-            message (string): The given message.
-        """
-        self._message = message
