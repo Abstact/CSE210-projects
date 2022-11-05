@@ -25,6 +25,7 @@ CAPTION = "Robot Finds Kitten"
 DATA_PATH = os.path.dirname(os.path.abspath(__file__)) + "/data/messages.txt"
 WHITE = Color(255, 255, 255)
 DEFAULT_ARTIFACTS = 40
+SPEED = 5
 
 
 def main():
@@ -78,7 +79,12 @@ def main():
         artifact.set_position(position)
         artifact.set_message(message)
         cast.add_actor("artifacts", artifact)
-    
+
+    artifact = artifact + SPEED
+    if artifact > MAX_Y:
+        MAX_X = random.randomrange(0, MAX_X)
+        artifact = -25
+
     # start the game
     keyboard_service = KeyboardService(CELL_SIZE)
     video_service = VideoService(CAPTION, MAX_X, MAX_Y, CELL_SIZE, FRAME_RATE)
