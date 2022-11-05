@@ -1,5 +1,5 @@
-import os
-import random
+# import os
+# import random
 
 from game.casting.actor import Actor
 from game.casting.artifact import Artifact
@@ -21,11 +21,11 @@ CELL_SIZE = 15
 FONT_SIZE = 15
 COLS = 60
 ROWS = 40
-CAPTION = "Robot Finds Kitten"
-DATA_PATH = os.path.dirname(os.path.abspath(__file__)) + "/data/messages.txt"
+CAPTION = "Greed"
+# DATA_PATH = os.path.dirname(os.path.abspath(__file__)) + "/data/messages.txt"
 WHITE = Color(255, 255, 255)
-DEFAULT_ARTIFACTS = 40
-SPEED = 5
+# DEFAULT_ARTIFACTS = 40
+# SPEED = 5
 
 
 def main():
