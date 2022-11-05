@@ -17,6 +17,7 @@ class Director:
         """
         self._keyboard_service = keyboard_service
         self._video_service = video_service
+        self._score = 0
         
     def start_game(self, cast):
         """Starts the game using the given cast. Runs the main game loop.
@@ -71,3 +72,17 @@ class Director:
         actors = cast.get_all_actors()
         self._video_service.draw_actors(actors)
         self._video_service.flush_buffer()
+
+    def _add_score(self, points):
+        """
+            Adds the earned points to the score
+            Args:
+                points: points to add
+        """
+        self._score += points
+    
+    def _get_score(self):
+        """
+            Returns the current score 
+        """
+        return self._score

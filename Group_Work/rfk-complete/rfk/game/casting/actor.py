@@ -14,6 +14,7 @@ class Actor:
         _color (Color): The color of the text.
         _position (Point): The screen coordinates.
         _velocity (Point): The speed and direction.
+        _points (int): The score of the player
     """
 
     def __init__(self):
@@ -23,6 +24,7 @@ class Actor:
         self._color = Color(255, 255, 255)
         self._position = Point(0, 0)
         self._velocity = Point(0, 0)
+        self._points = 0
 
     def get_color(self):
         """Gets the actor's color as a tuple of three ints (r, g, b).
@@ -115,3 +117,15 @@ class Actor:
             velocity (Point): The given velocity.
         """
         self._velocity = velocity
+
+    def get_points(self):
+        """
+            Returns the points
+        """
+        return self._points
+
+    def set_points(self, points):
+        """
+            Updates the points to the given score
+        """
+        self._points = points
