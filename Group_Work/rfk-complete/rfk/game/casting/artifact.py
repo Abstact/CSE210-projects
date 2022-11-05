@@ -22,6 +22,6 @@ class Artifact(Actor):
         super().set_velocity(Point(0,speed))
 
         red = random.randrange(20,100)
-        green = random.randrange(50, 75) 
+        green = random.randrange(100, 200) 
         color = Color(red, green, green) # random dark red color
         super().set_color(color)

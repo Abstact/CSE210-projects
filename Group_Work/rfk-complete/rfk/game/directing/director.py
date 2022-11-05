@@ -54,6 +54,20 @@ class Director:
         velocity._y = 0 #constrains the velocity to x axis only
         robot.set_velocity(velocity)        
 
+    def _add_score(self, points):
+        """
+            Adds the earned points to the score
+            Args:
+                points: points to add
+        """
+        self._score += points
+    
+    def _get_score(self):
+        """
+            Returns the current score 
+        """
+        return self._score
+        
     def _do_updates(self, cast):
         """Updates the robot's position and resolves any collisions with artifacts.
         
@@ -120,17 +134,3 @@ class Director:
         actors = cast.get_all_actors()
         self._video_service.draw_actors(actors)
         self._video_service.flush_buffer()
-
-    def _add_score(self, points):
-        """
-            Adds the earned points to the score
-            Args:
-                points: points to add
-        """
-        self._score += points
-    
-    def _get_score(self):
-        """
-            Returns the current score 
-        """
-        return self._score
