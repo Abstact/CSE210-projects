@@ -15,7 +15,7 @@ class Rock(Actor):
         super().__init__()
 
         # Rock appearance
-        super().set_text("O")
+        super().set_text("[ ]")
 
         super().set_points(-1) #removes a point for every rock hit
 
