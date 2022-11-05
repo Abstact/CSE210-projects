@@ -33,6 +33,6 @@ root                    (project root folder)
 
 ## Authors
 ---
-Marielle
-Christopher Lynch cjlynch@byui.edu
+Marielle Honey Chiong
+Christopher Lynch  email: cjlynch@byui.edu
 Nathan Rowley
