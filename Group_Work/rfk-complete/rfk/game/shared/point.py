@@ -70,3 +70,13 @@ class Point:
             Point: A new Point that is scaled.
         """
         return Point(self._x * factor, self._y * factor)
+
+    def close_enough(self, other, cell_size):
+        """Whether or not this Point is equal to the given one.
+        Args:
+            other (Point): The Point to compare.
+            cell_size: The size of the grid: how close a point must be to register a hit
+        Returns: 
+            boolean: True if both x and y are equal; false if otherwise.
+        """
+        return abs(self._x - other.get_x()) <= cell_size and abs(self._y - other.get_y()) <= cell_size
