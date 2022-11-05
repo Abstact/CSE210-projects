@@ -14,7 +14,7 @@ class Artifact(Actor):
     """
     def __init__(self):
         super().__init__() 
-        super().set_text("*") #this is what the artifact will look like
+        super().set_text("[*]") #this is what the artifact will look like
 
         super().set_points(+1) #this adds a point for each artifact hit
         
