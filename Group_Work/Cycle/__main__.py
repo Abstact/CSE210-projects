@@ -24,8 +24,8 @@ def main():
     cast.add_actor("foods", Food())
     cast.add_actor("snakes", Snake(constants.BLUE))
     cast.add_actor("boa", Boa())
-    cast.add_actor("scores", Score(Point(0,0), "Player One"))
-    cast.add_actor("scores", Score(Point(800,0), "Player Two"))
+    cast.add_actor("scores", Score(Point(0,0), "Player 1"))
+    cast.add_actor("scores", Score(Point(0,0), "Player 2"))
    
     # start the game
     keyboard_service = KeyboardService()
