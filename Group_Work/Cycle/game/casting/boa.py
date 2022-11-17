@@ -1,9 +1,9 @@
 import constants
-from game.casting.actor import Actor
+from game.casting.actor import Actor2
 from game.shared.point import Point
 
 
-class Boa(Actor):
+class Boa(Actor2):
     """
     A long limbless reptile.
     
@@ -41,7 +41,7 @@ class Boa(Actor):
             offset = velocity.reverse()
             position = tail.get_position().add(offset)
             
-            segment = Actor()
+            segment = Actor2()
             segment.set_position(position)
             segment.set_velocity(velocity)
             segment.set_text("#")
@@ -61,7 +61,7 @@ class Boa(Actor):
             text = "8" if i == 0 else "#"
             color = constants.YELLOW if i == 0 else constants.GREEN
             
-            segment = Actor()
+            segment = Actor2()
             segment.set_position(position)
             segment.set_velocity(velocity)
             segment.set_text(text)
