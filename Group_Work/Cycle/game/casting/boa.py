@@ -1,5 +1,5 @@
 import constants
-from game.casting.actor import Actor2
+from game.casting.actor2 import Actor2
 from game.shared.point import Point
 
 
