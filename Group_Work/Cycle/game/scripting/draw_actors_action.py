@@ -29,7 +29,7 @@ class DrawActorsAction(Action):
         score = cast.get_first_actor("scores")  # Score for the 1st player
         score2 = cast.get_first_actor("scores") # Score for the 2nd player
         
-        # food = cast.get_first_actor("foods")    # We don't need this
+        food = cast.get_first_actor("foods")    # We don't need this
 
         snake = cast.get_first_actor("snakes")
         segments = snake.get_segments()
@@ -40,7 +40,7 @@ class DrawActorsAction(Action):
         messages = cast.get_actors("messages")
 
         self._video_service.clear_buffer()
-        # self._video_service.draw_actor(food)    # We don't need this
+        self._video_service.draw_actor(food)    # We don't need this
         self._video_service.draw_actors(segments)
         self._video_service.draw_actors(nodules)
         self._video_service.draw_actor(score)   # Display 1st player score

@@ -34,41 +34,41 @@ class HandleCollisionsAction(Action):
             self._handle_game_over(cast)
             
     def _handle_tail_growth(self, cast):
-        player1 = cast.get_first_actor("snakes")
-        player2 = cast.get_first_actor("boa")
+        # player1 = cast.get_first_actor("snakes")
+        # player2 = cast.get_first_actor("boa")
 
-        tail_grow_count = 1
+        # tail_grow_count = 1
 
-        player1.grow_tail(tail_grow_count)
-        player2.grow_tail(tail_grow_count)
+        # player1.grow_tail(tail_grow_count)
+        # player2.grow_tail(tail_grow_count)
 
     # def _handle_food_collision(self, cast):        # We don't need this
-    #     """Updates the score nd moves the food if the snake collides with the food.
+        """Updates the score nd moves the food if the snake collides with the food.
         
-    #     Args:
-    #         cast (Cast): The cast of Actors in the game.
-    #     """
-    #     score = cast.get_first_actor("scores")
-    #     score2 = cast.get_first_actor("scores")
+        Args:
+            cast (Cast): The cast of Actors in the game.
+        """
+        score = cast.get_first_actor("scores")
+        score2 = cast.get_first_actor("scores")
 
-    #     food = cast.get_first_actor("foods")     
+        food = cast.get_first_actor("foods")     
         
-    #     snake = cast.get_first_actor("snakes")
-    #     boa = cast.get_first_actor("boa")
+        snake = cast.get_first_actor("snakes")
+        boa = cast.get_first_actor("boa")
 
-    #     head = snake.get_head()
-    #     head2 = boa.get_head()
+        head = snake.get_head()
+        head2 = boa.get_head()
 
-    #     if head.get_position().equals(food.get_position()):
-    #         points = food.get_points()
-    #         snake.grow_tail(points)
-    #         score.add_points(points)
-    #         food.reset()
-    #     elif head2.get_position().equals(food.get_position()):
-    #         points = food.get_points()
-    #         snake.grow_tail(points)
-    #         score2.add_points(points)
-    #         food.reset()
+        if head.get_position().equals(food.get_position()):
+            points = food.get_points()
+            snake.grow_tail(points)
+            score.add_points(points)
+            food.reset()
+        elif head2.get_position().equals(food.get_position()):
+            points = food.get_points()
+            snake.grow_tail(points)
+            score2.add_points(points)
+            food.reset()
     
     def _handle_segment_collision(self, cast):
         """Sets the game over flag if the cycles collides with one of its trails.
