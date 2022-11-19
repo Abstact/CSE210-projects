@@ -93,6 +93,7 @@ class HandleCollisionsAction(Action):
             if head.get_position().equals(segment.get_position()) or head.get_position().equals(head2.get_position()):
                 scores[1].add_points(1)
                 self._is_game_over = True
+                
         # cycle 2 collision
         for segment in segments:
             if head2.get_position().equals(segment.get_position()) or head2.get_position().equals(head.get_position()):
