@@ -64,10 +64,10 @@ class Cast:
             result = self._actors[group][0]
         return result
 
+    def get_second_actor(self, group):
         """
         Get's the second actor in the group. Repeats everything in the first actor, but for the second actor.
         """
-    def get_second_actor(self, group):
         result = None
         if group in self._actors.keys():
             result = self._actors[group][0]
