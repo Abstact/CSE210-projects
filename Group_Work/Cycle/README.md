@@ -1,6 +1,5 @@
-# Snake
-Snake is a clone of the classic game that we all used to play on our cellphones. You play this game 
-on a simulated terminal, with a textual interface.
+# Cycle
+Cycle is most famously displayed in the movie 'Tron.' You try to trap the other player with your tail and avoid the other players tail. Over time, your tail grows longer to increase difficulty.
 
 ## Getting Started
 ---
@@ -20,7 +19,7 @@ project folder. Select the main module inside the hunter folder and click the "r
 The project files and folders are organized as follows:
 ```
 root                    (project root folder)
-+-- snake               (source code for game)
++-- Cycle               (source code for game)
   +-- game              (specific game classes)
   +-- __main__.py       (entry point for program)
 +-- README.md           (general info)
@@ -33,4 +32,5 @@ root                    (project root folder)
 
 ## Authors
 ---
-* TODO: Add your name and email here
+Christopher Lynch
+Marielle Chiong
