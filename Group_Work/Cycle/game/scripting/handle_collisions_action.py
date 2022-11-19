@@ -1,4 +1,5 @@
 import constants
+import time
 from game.casting.actor import Actor
 from game.casting.actor2 import Actor2
 from game.scripting.action import Action
@@ -28,8 +29,18 @@ class HandleCollisionsAction(Action):
         """
         if not self._is_game_over:
             # self._handle_food_collision(cast)      # We don't need this 
+            self._handle_tail_growth(cast)
             self._handle_segment_collision(cast)
             self._handle_game_over(cast)
+            
+    def _handle_tail_growth(self, cast):
+        player1 = cast.get_first_actor("snakes")
+        player2 = cast.get_first_actor("boa")
+
+        tail_grow_count = 1
+
+        player1.grow_tail(tail_grow_count)
+        player2.grow_tail(tail_grow_count)
 
     # def _handle_food_collision(self, cast):        # We don't need this
     #     """Updates the score nd moves the food if the snake collides with the food.
@@ -69,11 +80,13 @@ class HandleCollisionsAction(Action):
         snake = cast.get_first_actor("snakes")
         head = snake.get_segments()[0]
         segments = snake.get_segments()[1:]
+
         #cycle 2
         boa = cast.get_second_actor("boa")
         head2 = boa.get_segments()[0]
         segments2 = boa.get_segments()[1:]
         scores = cast.get_actors('scores')
+
 
         #cycle 1 collision
         for segment in segments2:

@@ -1,6 +1,7 @@
 import constants
 from game.casting.actor import Actor
 from game.shared.point import Point
+from game.scripting.handle_collisions_action import HandleCollisionsAction
 
 
 class Snake(Actor):
@@ -36,12 +37,16 @@ class Snake(Actor):
         return self._segments[0]
 
     def grow_tail(self, number_of_segments):
+
+
         for i in range(number_of_segments):
             tail = self._segments[-1]
             velocity = tail.get_velocity()
             offset = velocity.reverse()
             position = tail.get_position().add(offset)
-            
+
+
+
             segment = Actor()
             segment.set_position(position)
             segment.set_velocity(velocity)
@@ -70,4 +75,5 @@ class Snake(Actor):
             segment.set_velocity(velocity)
             segment.set_text(text)
             segment.set_color(self._player_color)
+            
             self._segments.append(segment)
