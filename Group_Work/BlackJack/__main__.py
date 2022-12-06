@@ -1,6 +1,8 @@
+from director import Director
 
 def main():
-    pass
+    director = Director()
+    director.start_game()
 
 if __name__ == "__main__":
     main()

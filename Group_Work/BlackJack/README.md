@@ -12,3 +12,7 @@ director - control game flow
 terminal service
     - display cards
         - value and suit (color)
+
+input service
+    - Retrieves inputs from user
+    - Uses logic to determine possible options for player
