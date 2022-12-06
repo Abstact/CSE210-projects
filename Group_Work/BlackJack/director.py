@@ -10,8 +10,6 @@ class Director():
     def __init__(self):
         self.playing = True #self.playing - Determines whether or not the game is being played or if the player has ended the game
         self.cards_dealt = False #self.cards_dealt - Prevents the while loop for dealing cards twice
-        self.player_win_count = 0
-        self.dealer_win_count = 0
         self.player = Player() #Remaining variables are just initializing classes
         self.dealer = Dealer()
         self.terminal = Terminal()
@@ -59,14 +57,14 @@ class Director():
 
         if self.player.card_total > self.dealer.card_total:
             self.terminal.player_win()
-            self.player_win_count += 1
+            self.player.win_count += 1
         elif self.player.card_total < self.dealer.card_total:
             self.terminal.dealer_win()
-            self.dealer_win_count += 1
+            self.dealer.win_count += 1
         elif self.player.card_total == self.dealer.card_total:
             self.terminal.tie()
         
-        self.terminal.score(self.player_win_count, self.dealer_win_count)
+        self.terminal.score(self.player.win_count, self.dealer.win_count)
 
     def reset(self):
         """
