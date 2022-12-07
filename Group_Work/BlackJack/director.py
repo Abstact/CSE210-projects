@@ -22,6 +22,7 @@ class Director():
         self.terminal.intro() #Welcomes the user with a message that welcomes the user and presents the rules. You can determine whether or not the game waits for the user to read the rules
         while self.playing:
             self.deal_cards()
+            self.deal_cards() #Added a second cause you start with 2 cards -JR-
             self.take_turns()
             self.results()
             self.reset()
