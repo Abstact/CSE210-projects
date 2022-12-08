@@ -1,6 +1,7 @@
 # Some of the intrsutions are taken from (https://1883magazine.com/how-to-play-blackjack-online-step-by-step-guide/)
 
 from termcolor import colored
+import random
 
 class Terminal():
     """
@@ -39,16 +40,49 @@ class Terminal():
         ask()
 
     def player_win():
-        pass
+        """
+            Display random player won messages
+        """
+        winning_statements = ["Heh, I knew you'd win!", 
+                            "Didn't doubt you a bit", 
+                            "Wow, you're so lucky!", 
+                            "Looks like luck's on your side today!", 
+                            "You won!"]
+
+        print(random.choice(winning_statements))
 
     def dealer_win():
-        pass
+        """
+            Display random player lost messages
+        """
+        losing_statements = ["Better luck next time!",
+                            "Too bad",
+                            "You can do better!",
+                            "You lost"]
+
+        print(random.choice(losing_statements))
 
     def tie():
-        pass
+        """
+            Display random tie messages
+        """
+        tie_statements = ["It's a tie!",
+                        "You just tied with the dealer!",
+                        "It's a draw!",
+                        "That was tense, yet a draw"]
+        
+        print(random.choice(tie_statements))
 
     def score(player_score, dealer_score):
-        pass
+        """
+            Displays both scores
+
+            Args:
+                player_score
+                dealer_score
+        """
+        print(colored(f"Your score: {player_score}", "blue"))
+        print(colored(f"Dealer's Score: {dealer_score}"), "red")
 
     def goodbye():
         """
@@ -67,6 +101,10 @@ class Terminal():
                                 - Clubs: Blue
                                 - Spades: Green
                                 - Diamonds: Yellow
+
+            Example: 
+                show_card(A, "red")
+                show_card(10, "blue")
         """
         if len(str(card_number)) == 1:
             card = f"_____\n|   |\n| {card_number} |\n|___|"
