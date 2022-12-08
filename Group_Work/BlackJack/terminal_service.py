@@ -105,9 +105,9 @@ class Terminal():
 
         # Identify whether card value has 1 or 2 digits to adjust display
         if len(str(card_number)) == 1:
-            card = f"_____\n|   |\n| {card_number} |\n|___|"
+            card = f" ___ \n|   |\n| {card_number} |\n|___|"
         elif len(str(card_number)) == 2:
-            card = f"______\n|    |\n| {card_number} |\n|____|"
+            card = f" ____ \n|    |\n| {card_number} |\n|____|"
 
         # Identify the card color value to display
         if card_color == 1: 
