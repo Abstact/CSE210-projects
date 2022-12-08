@@ -97,17 +97,28 @@ class Terminal():
             Arg(s):
                 card_number: Gets the value of the card to display
                 card_color: Identify whether it is...
-                                - Hearts: Red
-                                - Clubs: Blue
-                                - Spades: Green
-                                - Diamonds: Yellow
-
-            Example: 
-                show_card(A, "red")
-                show_card(10, "blue")
+                            - (1) Hearts: Red
+                            - (2) Clubs: Blue
+                            - (3) Spades: Green
+                            - (4) Diamonds: Yellow
         """
+
+        # Identify whether card value has 1 or 2 digits to adjust display
         if len(str(card_number)) == 1:
             card = f"_____\n|   |\n| {card_number} |\n|___|"
         elif len(str(card_number)) == 2:
             card = f"______\n|    |\n| {card_number} |\n|____|"
-        print(colored(card, card_color))
+
+        # Identify the card color value to display
+        if card_color == 1: 
+            color = "red"         # Hearts
+        elif card_color == 2: 
+            color = "blue"        # Clubs
+        elif card_color == 3: 
+            color = "green"       # Spades
+        elif card_color == 4: 
+            color = "yellow"      # Diamonds
+
+        print(colored(card, color))
+
+    # show_card(random.randint(1,13), random.randint(1,4))      # Test if show_card function works
