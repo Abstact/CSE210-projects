@@ -1,17 +1,25 @@
 # Some of the intrsutions are taken from (https://1883magazine.com/how-to-play-blackjack-online-step-by-step-guide/)
 
+from termcolor import colored
+
 class Terminal():
     """
         Class that controls the terminal service
     """
-    def __init__(self):
+    def __init__(self) -> None:
         pass
         
 
     def intro():
+        """
+            Shows a welcome message
+        """
         print("Welcome to Blackjack!")
 
         def ask():
+            """
+                Asks the user if they would want to read the instructions.
+            """
             read_instructions = input(f"Do you want to read the instructions(Y/N)?\n\t→ ")
             if read_instructions.upper() == "Y":
                 print("\nHow to Play:")
@@ -43,4 +51,25 @@ class Terminal():
         pass
 
     def goodbye():
-        pass
+        """
+            Goodbye message
+        """
+        print("Thank you for playing Blackjack with us!\nSee ya again next time!")
+
+    def show_card(card_number, card_color):
+        """
+            Displays the card in the terminal.
+
+            Arg(s):
+                card_number: Gets the value of the card to display
+                card_color: Identify whether it is...
+                                - Hearts: Red
+                                - Clubs: Blue
+                                - Spades: Green
+                                - Diamonds: Yellow
+        """
+        if len(str(card_number)) == 1:
+            card = f"_____\n|   |\n| {card_number} |\n|___|"
+        elif len(str(card_number)) == 2:
+            card = f"______\n|    |\n| {card_number} |\n|____|"
+        print(colored(card, card_color))
