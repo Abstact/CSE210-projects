@@ -1,26 +1,30 @@
+# Some of the intrsutions are taken from (https://1883magazine.com/how-to-play-blackjack-online-step-by-step-guide/)
+
 import random
 from input_service import Input
+from terminal_service import Terminal
 
 class Player():
     """
-        Class that contains all the methods relating to the player
+        Class that contains all the methods relating to the Player
         Data needed:
             A count of the wins
             Cards held
+            Total of the cards held
 
         Methods needed:
             deal()
-            player_turn()
+            dealer_turn()
             reset()
-
+            update_count()
     """
-    
     
     def __init__(self):
         self.win_count = 0
         self.cards = []
-        card_total = 0
+        self.card_total = 0
         self.input = Input()
+        self.terminal = Terminal()
 
     def deal(self):
         """
@@ -29,7 +33,26 @@ class Player():
         self.cards.append(random.randint(1,52))
 
     def player_turn(self):
-        pass
+        """
+            Method that goes through the player turn. Shows the cards, then asks player to hit/stand until bust
+        """
+        
+        while (self.card_total < 0) and (self.card_total > 21):
+            # Display cards and total
+            for i in self.cards:
+                self.terminal.show_card(i)
+            print(f"Total: {self.card_total}")
+
+            # Ask for hit/stand
+            if self.input.hit_stand():
+                self.deal()
+            else:
+                #no more cards desired. Update count and stop method
+                self.update_count()
+                return
+
+            self.update_count()
+
 
     def reset(self):
         """
@@ -45,9 +68,21 @@ class Player():
                 if bust, set to -1
         """
         if len(self.cards) == 0:
-            card_total = 0
+            self.card_total = 0
             return
         
         # Check raw sum
-        card_total = 0
-        for i in 
+        self.card_total = 0 #fresh check each time
+        for i in self.cards:
+            self.card_total += int(i / 4) + 1
+            # card number is one more than the raw value divided by 4
+        
+        # if bust, check for aces, subtract 10 if needed
+        if self.card_total > 21:
+            for i in self.cards:
+                if int(i / 4) == 0:
+                    self.card_total -= 10
+        
+        # if still bust, set to -1
+        if self.card_total > 21:
+            self.card_total = -1
