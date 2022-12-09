@@ -102,6 +102,8 @@ class Terminal():
                             - (3) Spades: Green
                             - (4) Diamonds: Yellow
         """
+        card_number = int(val / 4)
+        card_color = val % 4
 
         # Identify whether card value has 1 or 2 digits to adjust display
         if len(str(card_number)) == 1:

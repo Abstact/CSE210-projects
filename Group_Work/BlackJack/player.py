@@ -1,4 +1,5 @@
 import random
+from input_service import Input
 
 class Player():
     """
@@ -19,6 +20,7 @@ class Player():
         self.win_count = 0
         self.cards = []
         card_total = 0
+        self.input = Input()
 
     def deal(self):
         """
@@ -46,4 +48,6 @@ class Player():
             card_total = 0
             return
         
-        
+        # Check raw sum
+        card_total = 0
+        for i in 
