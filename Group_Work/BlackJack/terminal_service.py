@@ -1,7 +1,11 @@
 # Some of the intrsutions are taken from (https://1883magazine.com/how-to-play-blackjack-online-step-by-step-guide/)
 
+from termcolor import cprint
 from termcolor import colored
 import random
+import os
+
+os.system('color')
 
 class Terminal():
     """
@@ -35,7 +39,7 @@ class Terminal():
                 print("I guess you're ready. Let's Go!")
 
             else:
-                print("Please enter either Y or N\n\t→ ")
+                print("Please enter either Y or N")
                 ask()
         ask()
 
@@ -81,8 +85,8 @@ class Terminal():
                 player_score
                 dealer_score
         """
-        print(colored(f"Your score: {player_score}", "blue"))
-        print(colored(f"Dealer's Score: {dealer_score}"), "red")
+        print(f"Your score: {player_score}")
+        print(f"Dealer's Score: {dealer_score}")
 
     def goodbye():
         """
@@ -90,37 +94,49 @@ class Terminal():
         """
         print("Thank you for playing Blackjack with us!\nSee ya again next time!")
 
-    def show_card(card_number, card_color):
+    def show_card(cards):
         """
             Displays the card in the terminal.
 
             Arg(s):
-                card_number: Gets the value of the card to display
-                card_color: Identify whether it is...
-                            - (1) Hearts: Red
-                            - (2) Clubs: Blue
-                            - (3) Spades: Green
-                            - (4) Diamonds: Yellow
+                cards: A random number from 1-52
+
+            - (1) Hearts: Red
+            - (2) Clubs: Blue
+            - (3) Spades: Green
+            - (4) Diamonds: Yellow
+            
         """
-        card_number = int(val / 4)
-        card_color = val % 4
+        card_number = int(cards / 4)
+        card_color = int(cards % 4)
+
+        if card_number == 11:
+            card_number = "J"
+        
+        if card_number == 12:
+            card_number = "Q"
+
+        if card_number == 13:
+            card_number = "K"
 
         # Identify whether card value has 1 or 2 digits to adjust display
         if len(str(card_number)) == 1:
-            card = f" ___ \n|   |\n| {card_number} |\n|___|"
+            display = f"\n ___ \n|   |\n| {card_number} |\n|___|"
         elif len(str(card_number)) == 2:
-            card = f" ____ \n|    |\n| {card_number} |\n|____|"
+            display = f"\n ____ \n|    |\n| {card_number} |\n|____|"
 
         # Identify the card color value to display
-        if card_color == 1: 
+        if card_color == 0: 
             color = "red"         # Hearts
-        elif card_color == 2: 
+        elif card_color == 1: 
             color = "blue"        # Clubs
-        elif card_color == 3: 
+        elif card_color == 2: 
             color = "green"       # Spades
-        elif card_color == 4: 
+        elif card_color == 3: 
             color = "yellow"      # Diamonds
 
-        print(colored(card, color))
+        print(cprint(display, color))
 
     # show_card(random.randint(1,13), random.randint(1,4))      # Test if show_card function works
+    show_card(random.randint(1,52))
+    score(12,11)

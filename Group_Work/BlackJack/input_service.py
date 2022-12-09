@@ -7,11 +7,18 @@ class Input():
         """
             Asks the player if they want to continue the game
         """
+        def ask():
 
-        ask_continue = input("Do you want to continue(Y/N)?\n\t→ ")
+            ask_continue = input("Do you want to continue(Y/N)?\n\t→ ")
 
-        if ask_continue.upper() == "Y":
-            self.keep_playing = True
-            
-        elif ask_continue.upper() == "N":
-            self.keep_playing = False
+            if ask_continue.upper() == "Y":
+                self.keep_playing = True
+                
+            elif ask_continue.upper() == "N":
+                self.keep_playing = False
+
+            else:
+                print("Please enter Y or N")
+                ask()
+
+        ask()
