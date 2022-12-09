@@ -1,7 +1,6 @@
 # Some of the intrsutions are taken from (https://1883magazine.com/how-to-play-blackjack-online-step-by-step-guide/)
 
-from termcolor import cprint
-from termcolor import colored
+from termcolor import cprint, colored
 import random
 import os
 
@@ -15,7 +14,7 @@ class Terminal():
         pass
         
 
-    def intro():
+    def intro(self):
         """
             Shows a welcome message
         """
@@ -43,7 +42,7 @@ class Terminal():
                 ask()
         ask()
 
-    def player_win():
+    def player_win(self):
         """
             Display random player won messages
         """
@@ -55,7 +54,7 @@ class Terminal():
 
         print(random.choice(winning_statements))
 
-    def dealer_win():
+    def dealer_win(self):
         """
             Display random player lost messages
         """
@@ -66,7 +65,7 @@ class Terminal():
 
         print(random.choice(losing_statements))
 
-    def tie():
+    def tie(self):
         """
             Display random tie messages
         """
@@ -77,7 +76,7 @@ class Terminal():
         
         print(random.choice(tie_statements))
 
-    def score(player_score, dealer_score):
+    def score(self, player_score, dealer_score):
         """
             Displays both scores
 
@@ -88,7 +87,7 @@ class Terminal():
         print(f"Your score: {player_score}")
         print(f"Dealer's Score: {dealer_score}")
 
-    def goodbye():
+    def goodbye(self):
         """
             Goodbye message
         """
@@ -135,7 +134,7 @@ class Terminal():
         elif card_color == 3: 
             color = "yellow"      # Diamonds
 
-        print(cprint(display, color))
+        cprint(display, color)
 
     # show_card(random.randint(1,13), random.randint(1,4))      # Test if show_card function works
     # show_card(random.randint(1,52))
