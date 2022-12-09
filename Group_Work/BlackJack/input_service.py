@@ -20,7 +20,6 @@ class Input():
             else:                                   # Prevents error from user not typing y or n
                 print("Please enter Y or N")
                 ask()
-
         ask()
     
     def hit_stand(self):

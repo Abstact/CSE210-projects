@@ -121,9 +121,9 @@ class Terminal():
 
         # Identify whether card value has 1 or 2 digits to adjust display
         if len(str(card_number)) == 1:
-            display = f"\n ___ \n|   |\n| {card_number} |\n|___|"
+            display = f" ___ \n|   |\n| {card_number} |\n|___|"
         elif len(str(card_number)) == 2:
-            display = f"\n ____ \n|    |\n| {card_number} |\n|____|"
+            display = f" ____ \n|    |\n| {card_number} |\n|____|"
 
         # Identify the card color value to display
         if card_color == 0: 
@@ -138,5 +138,4 @@ class Terminal():
         print(cprint(display, color))
 
     # show_card(random.randint(1,13), random.randint(1,4))      # Test if show_card function works
-    show_card(random.randint(1,52))
-    score(12,11)
+    # show_card(random.randint(1,52))
