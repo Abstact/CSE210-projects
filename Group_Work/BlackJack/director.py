@@ -3,6 +3,7 @@ from player import Player
 from terminal_service import Terminal
 from input_service import Input
 
+
 class Director():
     """
         Class that controls the game
