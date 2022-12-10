@@ -76,8 +76,14 @@ class Player():
         # Check raw sum
         self.card_total = 0 #fresh check each time
         for i in self.cards:
-            self.card_total += int(i / 4) + 1
-            # card number is one more than the raw value divided by 4
+            card = int(i / 4) + 1
+            if card == 1:
+                self.card_total += 11
+            elif card >= 11:
+                self.card_total += 10
+            else:
+                self.card_total += card
+            # card number is 11 if Ace, or 10 if a Royal, or the card value if 2-10
         
         # if bust, check for aces, subtract 10 if needed
         if self.card_total > 21:
