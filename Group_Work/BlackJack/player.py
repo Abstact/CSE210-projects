@@ -88,7 +88,7 @@ class Player():
         # if bust, check for aces, subtract 10 if needed
         if self.card_total > 21:
             for i in self.cards:
-                if int(i / 4) == 0:
+                if int(i / 4) == 0 & self.card_total > 21:
                     self.card_total -= 10
         
         # if still bust, set to -1
