@@ -1,7 +1,8 @@
 class Input():
     
     def __init__(self) -> None:
-        self.keep_playing = True
+        self.playing = True
+        self.hit = True
 
     def keep_playing(self):
         """
@@ -12,10 +13,10 @@ class Input():
             ask_continue = input("Do you want to continue(Y/N)?\n\t→ ")
 
             if ask_continue.upper() == "Y":
-                self.keep_playing = True
+                self.playing = True
                 
             elif ask_continue.upper() == "N":
-                self.keep_playing = False
+                self.playing = False
 
             else:                                   # Prevents error from user not typing y or n
                 print("Please enter Y or N")
@@ -27,10 +28,16 @@ class Input():
             Asks the player if they want to hit ot stand
         """
 
-        ask_continue = input("Do you want to hit ot stand (H/S)?\n\t→ ")
+        def ask_2():
+            ask_continue = input("Do you want to hit ot stand (H/S)?\n\t→ ")
 
-        if ask_continue.upper() == "H":
-            self.keep_playing = True
+            if ask_continue.upper() == "H":
+                self.hit = True
+                
+            elif ask_continue.upper() == "S":
+                self.hit = False
             
-        elif ask_continue.upper() == "S":
-            self.keep_playing = False
+            else:
+                print("Please enter H or S")
+                ask_2()
+        ask_2()

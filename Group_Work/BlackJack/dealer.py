@@ -32,13 +32,14 @@ class Dealer():
             Method that adds a card to self
         """
         self.cards.append(random.randint(1,52))
+        self.update_count()
 
     def dealer_turn(self):
         """
             Method that goes through the dealer turn. If under min_stnad, then hit until bust
         """
         
-        while (self.card_total < 0) and (self.card_total > 21):
+        while (self.card_total > 0) and (self.card_total < 21):
             # Display cards and total
             for i in self.cards:
                 self.terminal.show_card(i)

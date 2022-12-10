@@ -93,7 +93,7 @@ class Terminal():
         """
         print("Thank you for playing Blackjack with us!\nSee ya again next time!")
 
-    def show_card(cards):
+    def show_card(self, cards):
         """
             Displays the card in the terminal.
 

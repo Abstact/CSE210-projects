@@ -74,8 +74,9 @@ class Director():
         """
         if not self.playing:
             return
-        
-        if self.input.keep_playing():
+
+        self.input.keep_playing()
+        if self.input.playing:
             self.dealer.reset() #Removes all stored card values
             self.player.reset()
             self.cards_dealt = False

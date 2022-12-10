@@ -31,20 +31,22 @@ class Player():
             Method that adds a card to self
         """
         self.cards.append(random.randint(1,52))
+        self.update_count()
 
     def player_turn(self):
         """
             Method that goes through the player turn. Shows the cards, then asks player to hit/stand until bust
         """
         
-        while (self.card_total < 0) and (self.card_total > 21):
+        while (self.card_total > 0) and (self.card_total < 21):
             # Display cards and total
             for i in self.cards:
                 self.terminal.show_card(i)
             print(f"Total: {self.card_total}")
 
             # Ask for hit/stand
-            if self.input.hit_stand():
+            self.input.hit_stand()
+            if self.input.hit:
                 self.deal()
             else:
                 #no more cards desired. Update count and stop method
