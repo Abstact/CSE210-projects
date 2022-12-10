@@ -32,7 +32,7 @@ class Terminal():
                 print("\t-You have to make sure that you have healthy hand\n\t and that if it cross values of 16 or 17, you should \n\t decide if you are willing to take a risk")
                 print("→ Decide when you want to 'STAND'\n\t-When you are satisfied with your hand, choose to STAND")
                 print("→ The Outcome\n\t-You WIN if the value of the cards in your \n\t hand are higher than the dealers or is equal to 21")
-                print("\n\t- If the value of your hand is lower than the \n\t dealers or cross 21, you LOSE")
+                print("\t- If the value of your hand is lower than the \n\t dealers or cross 21, you LOSE")
 
             elif read_instructions.upper() == "N":
                 print("I guess you're ready. Let's Go!")
@@ -109,13 +109,21 @@ class Terminal():
         card_number = int(cards / 4)
         card_color = int(cards % 4)
 
-        if card_number == 11:
+        card_number_display = [1,2,3,4,5,6,7,8,9]
+
+        if card_number in card_number_display:
+            card_number += 1
+
+        if card_number == 0:
+            card_number = "A"
+
+        if card_number == 10:
             card_number = "J"
         
-        if card_number == 12:
+        if card_number == 11:
             card_number = "Q"
 
-        if card_number == 13:
+        if card_number == 12:
             card_number = "K"
 
         # Identify whether card value has 1 or 2 digits to adjust display
