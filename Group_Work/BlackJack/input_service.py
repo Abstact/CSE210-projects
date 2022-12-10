@@ -29,7 +29,7 @@ class Input():
         """
 
         def ask_2():
-            ask_continue = input("Do you want to hit ot stand (H/S)?\n\t→ ")
+            ask_continue = input("Do you want to hit or stand (H/S)?\n\t→ ")
 
             if ask_continue.upper() == "H":
                 self.hit = True

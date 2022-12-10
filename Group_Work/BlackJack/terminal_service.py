@@ -109,21 +109,21 @@ class Terminal():
         card_number = int(cards / 4)
         card_color = int(cards % 4)
 
-        card_number_display = [1,2,3,4,5,6,7,8,9]
+        card_number_display = [2,3,4,5,6,7,8,9]
 
         if card_number in card_number_display:
             card_number += 1
 
-        if card_number == 0:
+        if card_number == 1:
             card_number = "A"
 
-        if card_number == 10:
+        if card_number == 11:
             card_number = "J"
         
-        if card_number == 11:
+        if card_number == 12:
             card_number = "Q"
 
-        if card_number == 12:
+        if card_number == 13:
             card_number = "K"
 
         # Identify whether card value has 1 or 2 digits to adjust display
