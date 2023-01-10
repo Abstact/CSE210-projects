@@ -23,7 +23,7 @@ class Director:
             self.hi_lo()
             self.cleanup()
 
-#Allows the user to guess if their card is higher or lower and determines the value of the card.
+    #Allows the user to guess if their card is higher or lower and determines the value of the card.
     def hi_lo(self):
         if not self.playing:
             return
@@ -54,7 +54,7 @@ class Director:
         print(f"Your score: {str(self.you.points)}")
         print()
 
-#Allows the game to be over when the user's points goes to 0. Also allows the user to play again.
+    #Allows the game to be over when the user's points goes to 0. Also allows the user to play again.
     def cleanup(self):
         if not self.playing:
             return
@@ -75,7 +75,7 @@ class Director:
                 self.playing = False
                 return
 
-#Compares the previous card with the drawn card to determine if user wins or loses.
+    #Compares the previous card with the drawn card to determine if user wins or loses.
     def compare(self):
         card1 = self.previous_card.value
         card2 = self.next_card.value
